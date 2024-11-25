@@ -27,6 +27,9 @@ def getUrl(url, proxy=None):
         )
         return portal
 
+    if url.endswith(".php"):
+        return url
+
     url = urlparse(url).scheme + "://" + urlparse(url).netloc
     urls = [
         "/c/xpcom.common.js",
